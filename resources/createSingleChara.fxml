@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="CreatePatryController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ctrl.CreateSingleCharaController">
+   <children>
+      <Label fx:id="textLabel" layoutX="10.0" layoutY="380.0" prefHeight="125.0" prefWidth="900.0" textAlignment="JUSTIFY">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Pane fx:id="jobPane" layoutX="340.0" layoutY="50.0" prefHeight="240.0" prefWidth="240.0" />
+      <Button fx:id="buttonReturn" layoutX="380.0" layoutY="520.0" mnemonicParsing="false" onAction="#onReturnClicked" prefHeight="25.0" prefWidth="160.0" text="戻る">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonLeftJob" layoutX="305.0" layoutY="175.0" mnemonicParsing="false" onAction="#onLeftJobClicked" prefHeight="25.0" prefWidth="35.0" text="&lt;" />
+      <Button fx:id="buttonRightJob" layoutX="580.0" layoutY="175.0" mnemonicParsing="false" onAction="#onRightJobClicked" prefHeight="25.0" prefWidth="35.0" text="&gt;" />
+      <Button fx:id="buttonLeftSTR" layoutX="680.0" layoutY="45.0" mnemonicParsing="false" onAction="#onLeftSTRClicked" text="&lt;" />
+      <Button fx:id="buttonRightSTR" layoutX="810.0" layoutY="45.0" mnemonicParsing="false" onAction="#onRightSTRClicked" text="&gt;" />
+      <Button fx:id="buttonLeftINT" layoutX="680.0" layoutY="75.0" mnemonicParsing="false" onAction="#onLeftINTClicked" text="&lt;" />
+      <Button fx:id="buttonRightINT" layoutX="810.0" layoutY="75.0" mnemonicParsing="false" onAction="#onRightINTClicked" text="&gt;" />
+      <Button fx:id="buttonLeftVIT" layoutX="680.0" layoutY="105.0" mnemonicParsing="false" onAction="#onLeftVITClicked" text="&lt;" />
+      <Button fx:id="buttonRightVIT" layoutX="810.0" layoutY="105.0" mnemonicParsing="false" onAction="#onRightVITClicked" text="&gt;" />
+      <Button fx:id="buttonLeftSPD" layoutX="680.0" layoutY="135.0" mnemonicParsing="false" onAction="#onLeftSPDClicked" text="&lt;" />
+      <Button fx:id="buttonRightSPD" layoutX="810.0" layoutY="135.0" mnemonicParsing="false" onAction="#onRightSPDClicked" text="&gt;" />
+      <Button fx:id="buttonLeftACC" layoutX="680.0" layoutY="165.0" mnemonicParsing="false" onAction="#onLeftACCClicked" text="&lt;" />
+      <Button fx:id="buttonRightACC" layoutX="810.0" layoutY="165.0" mnemonicParsing="false" onAction="#onRightACCClicked" text="&gt;" />
+      <Button fx:id="buttonLeftLUK" layoutX="680.0" layoutY="195.0" mnemonicParsing="false" onAction="#onLeftLUKClicked" text="&lt;" />
+      <Button fx:id="buttonRightLUK" layoutX="810.0" layoutY="195.0" mnemonicParsing="false" onAction="#onRightLUKClicked" text="&gt;" />
+      <Label fx:id="strLabel" layoutX="630.0" layoutY="45.0" prefHeight="25.0" prefWidth="45.0" text="攻撃力">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="intLabel" layoutX="630.0" layoutY="75.0" prefHeight="25.0" prefWidth="45.0" text="知力">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="vitLabel" layoutX="630.0" layoutY="105.0" prefHeight="25.0" prefWidth="45.0" text="体力">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="spdLabel" layoutX="630.0" layoutY="135.0" prefHeight="25.0" prefWidth="45.0" text="素速さ">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="accLabel" layoutX="630.0" layoutY="165.0" prefHeight="25.0" prefWidth="45.0" text="集中力">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lukLabel" layoutX="630.0" layoutY="195.0" prefHeight="25.0" prefWidth="45.0" text="幸運">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonCreate" layoutX="380.0" layoutY="300.0" mnemonicParsing="false" onAction="#onCreateClicked" prefHeight="25.0" prefWidth="160.0" text="作成">
+         <font>
+            <Font name="SansSerif Regular" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="textExplainJob" layoutX="10.0" layoutY="70.0" prefHeight="180.0" prefWidth="290.0" textAlignment="JUSTIFY">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="explainLabel" layoutX="14.0" layoutY="45.0" prefHeight="25.0" prefWidth="120.0" text="[職業説明]">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="strBar" layoutX="705.0" layoutY="45.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="105.0" progress="0.0" />
+      <ProgressBar fx:id="intBar" layoutX="705.0" layoutY="75.0" prefHeight="25.0" prefWidth="105.0" progress="0.0" />
+      <ProgressBar fx:id="vitBar" layoutX="705.0" layoutY="105.0" prefHeight="25.0" prefWidth="105.0" progress="0.0" />
+      <ProgressBar fx:id="spdBar" layoutX="705.0" layoutY="135.0" prefHeight="25.0" prefWidth="105.0" progress="0.0" />
+      <ProgressBar fx:id="accBar" layoutX="705.0" layoutY="165.0" prefHeight="25.0" prefWidth="105.0" progress="0.0" />
+      <ProgressBar fx:id="lukBar" layoutX="705.0" layoutY="195.0" prefHeight="25.0" prefWidth="105.0" progress="0.0" />
+      <Label fx:id="fixedRemainPointText" layoutX="630.0" layoutY="225.0" prefHeight="25.0" prefWidth="70.0" text="残りポイント">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="remainPoint" layoutX="705.0" layoutY="225.0" prefHeight="25.0" prefWidth="35.0" text="10">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="jobName" alignment="CENTER" layoutX="387.0" layoutY="35.0" prefHeight="30.0" prefWidth="160.0" textAlignment="CENTER">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="630.0" layoutY="15.0" prefHeight="25.0" prefWidth="45.0" text="名前">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="playerNameField" layoutX="680.0" layoutY="15.0" promptText="名前を入れてください" />
+   </children>
+</AnchorPane>

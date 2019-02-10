@@ -1,0 +1,184 @@
+.root {
+	-fx-background-image: url("../background/guild.jpg");
+}
+
+#buttonReturn {
+	-fx-font-size: 18px;
+	-fx-text-fill: white;
+	-fx-font-family: "Arial black";
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(#dcab5a, #745218);
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+	-fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: black;
+}
+
+#buttonReturn:hover {
+	-fx-background-color: linear-gradient(#dcab5a, #89611d);
+}
+
+#buttonCreate {
+	-fx-font-size: 18px;
+	-fx-text-fill: white;
+	-fx-font-family: "Arial black";
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(#dcab5a, #745218);
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+	-fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: black;
+}
+
+#buttonCreate:hover {
+	-fx-background-color: linear-gradient(#dcab5a, #89611d);
+}
+
+#buttonLeftJob {
+	-fx-text-fill: brown;
+	-fx-font-family: "Arial black";
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(#fff2ac, #d7b700);
+	-fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: black;
+}
+
+#buttonLeftJob:hover {
+	-fx-background-color: linear-gradient(#d7b700, #fff2ac);
+}
+
+#buttonRightJob {
+	-fx-text-fill: brown;
+	-fx-font-family: "Arial black";
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(#fff2ac, #d7b700);
+	-fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: black;
+}
+
+#buttonRightJob:hover {
+	-fx-background-color: linear-gradient(#d7b700, #fff2ac);
+}
+
+#textExplainJob {
+	-fx-font-size: 14px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+	-fx-background-color: #000000;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+}
+
+#explainLabel {
+	-fx-font-size: 18px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+	-fx-background-color: #000000;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+	-fx-text-alignment: center;
+}
+
+#remainPoint {
+	-fx-font-size: 16px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+	-fx-background-color: #000000;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+}
+
+#fixedRemainPointText {
+	-fx-font-size: 14px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+#nameLabel {
+	-fx-font-size: 14px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+#jobName {
+	-fx-font-size: 18px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+	-fx-background-color: #000000;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+}
+
+#strLabel {
+	-fx-font-size: 14px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+#intLabel {
+	-fx-font-size: 14px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+#vitLabel {
+	-fx-font-size: 14px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+#spdLabel {
+	-fx-font-size: 14px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+#accLabel {
+	-fx-font-size: 14px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+#lukLabel {
+	-fx-font-size: 14px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+#textLabel {
+	-fx-font-size: 18px;
+	-fx-font-family: "Arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+	-fx-background-color: #000000;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+}
+
+.button{
+    -fx-text-fill: brown;
+    -fx-font-family: "Arial black";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#fff2ac, #d7b700);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+    -fx-border-color: black;
+}
+.button:hover{
+    -fx-background-color: linear-gradient(#d7b700, #fff2ac);
+}

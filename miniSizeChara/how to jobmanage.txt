@@ -1,0 +1,4 @@
+画像が増えたら、増加ファイル分JOBManage._JobTypeCapacityを増やす。
+これにより、CreateSingleCharaControllerの表示が増えていく。
+
+MALE/FEMALE以外の職の種類が増えたら、列挙型「JOB」の定数も増やす。
