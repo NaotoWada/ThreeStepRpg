@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="TopMenuController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ctrl.BattleController">
+	<children>
+		<Pane fx:id="paneChara1" layoutX="235.0" layoutY="15.0" prefHeight="120.0" prefWidth="120.0" />
+		<Pane fx:id="paneChara3" layoutX="235.0" layoutY="255.0" prefHeight="120.0" prefWidth="120.0" />
+		<Pane fx:id="paneChara2" layoutX="235.0" layoutY="135.0" prefHeight="120.0" prefWidth="120.0" />
+		<Pane fx:id="iconChara1" layoutX="15.0" layoutY="15.0" prefHeight="60.0" prefWidth="220.0" />
+		<Button fx:id="buttonBackHome" layoutX="15.0" layoutY="380.0" mnemonicParsing="false" onAction="#onBackHomeClicked" text="退場" />
+		<Pane fx:id="centralEffectPane" layoutX="370.0" layoutY="70.0" prefHeight="240.0" prefWidth="240.0" />
+		<ProgressBar fx:id="hpBarChara1" layoutX="35.0" layoutY="95.0" prefHeight="15.0" prefWidth="200.0" progress="0.0" />
+		<ProgressBar fx:id="mpBarChara1" layoutX="35.0" layoutY="110.0" prefHeight="15.0" prefWidth="200.0" progress="0.0" />
+		<Label layoutX="15.0" layoutY="95.0" text="HP" />
+		<Label layoutX="15.0" layoutY="110.0" text="MP" />
+      <Pane fx:id="iconChara11" layoutX="15.0" layoutY="135.0" prefHeight="60.0" prefWidth="220.0" />
+      <Label fx:id="nameChara11" layoutX="15.0" layoutY="195.0" prefHeight="20.0" prefWidth="220.0" />
+      <ProgressBar fx:id="hpBarChara2" layoutX="35.0" layoutY="215.0" prefHeight="15.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="mpBarChara2" layoutX="35.0" layoutY="230.0" prefHeight="15.0" prefWidth="200.0" progress="0.0" />
+      <Label layoutX="15.0" layoutY="215.0" text="HP" />
+      <Label layoutX="15.0" layoutY="230.0" text="MP" />
+      <Pane fx:id="iconChara111" layoutX="15.0" layoutY="255.0" prefHeight="60.0" prefWidth="220.0" />
+      <Label fx:id="nameChara111" layoutX="15.0" layoutY="315.0" prefHeight="20.0" prefWidth="220.0" />
+      <ProgressBar fx:id="hpBarChara3" layoutX="35.0" layoutY="335.0" prefHeight="15.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="mpBarChara3" layoutX="35.0" layoutY="350.0" prefHeight="15.0" prefWidth="200.0" progress="0.0" />
+      <Label layoutX="15.0" layoutY="335.0" text="HP" />
+      <Label layoutX="15.0" layoutY="350.0" text="MP" />
+      <ProgressBar fx:id="hpBarMonster" layoutX="640.0" layoutY="310.0" prefHeight="20.0" prefWidth="240.0" progress="0.0" />
+		<Label fx:id="nameChara1" layoutX="15.0" layoutY="75.0" prefHeight="20.0" prefWidth="220.0" />
+      <HBox fx:id="num1HBox" layoutX="235.0" layoutY="15.0" prefHeight="60.0" prefWidth="126.0">
+         <children>
+            <Pane fx:id="num1_9" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num1_8" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num1_7" layoutX="24.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num1_6" layoutX="38.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num1_5" layoutX="52.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num1_4" layoutX="66.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num1_3" layoutX="80.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num1_2" layoutX="94.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num1_1" layoutX="108.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="num2HBox" layoutX="235.0" layoutY="135.0" prefHeight="60.0" prefWidth="126.0">
+         <children>
+            <Pane fx:id="num2_9" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num2_8" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num2_7" layoutX="24.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num2_6" layoutX="38.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num2_5" layoutX="52.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num2_4" layoutX="66.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num2_3" layoutX="80.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num2_2" layoutX="94.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num2_1" layoutX="108.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="num3HBox" layoutX="235.0" layoutY="255.0" prefHeight="60.0" prefWidth="126.0">
+         <children>
+            <Pane fx:id="num3_9" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num3_8" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num3_7" layoutX="24.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num3_6" layoutX="38.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num3_5" layoutX="52.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num3_4" layoutX="66.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num3_3" layoutX="80.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num3_2" layoutX="94.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="num3_1" layoutX="108.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+         </children>
+      </HBox>
+      <Label fx:id="turnLabel" layoutX="820.0" layoutY="10.0" prefHeight="20.0" prefWidth="30.0" text="★" />
+      <ImageView fitHeight="30.0" fitWidth="70.0" layoutX="850.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@..//pict/icons/Stairs.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="stairsLabel" layoutX="885.0" layoutY="10.0" />
+      <ImageView fx:id="turnImg" fitHeight="30.0" fitWidth="60.0" layoutX="780.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@..//pict/icons/Turn.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="muteButton" layoutX="880.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onMuteClicked" prefHeight="30.0" prefWidth="30.0" text="Mute">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-8.0">
+               <image>
+                  <Image url="@..//pict/icons/Mute.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="soundButton" layoutX="880.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onSoundClicked" prefHeight="30.0" prefWidth="30.0" text="Mute">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-8.0">
+               <image>
+                  <Image url="@..//pict/icons/Sound.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fx:id="rankImg" fitHeight="30.0" fitWidth="60.0" layoutX="710.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@..//pict/icons/Rank.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="rankLabel" layoutX="745.0" layoutY="10.0" prefHeight="20.0" prefWidth="30.0" text="★" />
+      <HBox fx:id="numMonsHBox" layoutX="707.0" layoutY="175.0" prefHeight="60.0" prefWidth="126.0">
+         <children>
+            <Pane fx:id="numMons_9" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="numMons_8" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="numMons_7" layoutX="24.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="numMons_6" layoutX="38.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="numMons_5" layoutX="52.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="numMons_4" layoutX="66.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="numMons_3" layoutX="80.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="numMons_2" layoutX="94.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+            <Pane fx:id="numMons_1" layoutX="108.0" layoutY="10.0" prefHeight="60.0" prefWidth="14.0" />
+         </children>
+      </HBox>
+		<Pane fx:id="monsterPane" layoutX="640.0" layoutY="70.0" prefHeight="240.0" prefWidth="240.0" />
+      <TextArea fx:id="textArea" layoutX="15.0" layoutY="405.0" prefHeight="150.0" prefWidth="890.0" stylesheets="@../css/Battle.css" />
+	</children>
+</AnchorPane>

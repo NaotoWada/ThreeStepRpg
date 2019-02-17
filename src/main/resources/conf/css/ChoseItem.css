@@ -1,0 +1,84 @@
+.root {
+	-fx-background-image: url("/pict/background/inside.jpg");
+}
+
+#canSelectItemLabel {
+	-fx-font-size: 15px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+	-fx-background-color: #000000;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+}
+
+#alreadySelected {
+	-fx-font-size: 15px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+	-fx-background-color: #000000;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+}
+
+#itemSelectViewLabel {
+	-fx-background-color: #262626;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+}
+
+#itemSelectedLabel {
+	-fx-font-size: 15px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-background-color: #262626;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+}
+
+#textItem {
+	-fx-font-size: 15px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+	-fx-background-color: #000000;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+}
+
+#textLabel {
+	-fx-font-size: 15px;
+	-fx-font-family: "arial black";
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+	-fx-background-color: #000000;
+	-fx-border-color: #828282;
+	-fx-border-width: 2px;
+}
+.button {
+	-fx-font-size: 18px;
+	-fx-text-fill: white;
+	-fx-font-family: "Arial black";
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(#dcab5a, #745218);
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+	-fx-background-radius: 5;
+	-fx-border-radius: 5;
+	-fx-border-color: black;
+}
+
+.button:hover {
+	-fx-background-color: linear-gradient(#dcab5a, #89611d);
+}
+
+.check-box .box {
+    -fx-background-color: black;
+    -fx-border-style:dashed;
+    -fx-border-color: white;
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+}
+.check-box:selected .box {
+    -fx-background-color: white;
+}
