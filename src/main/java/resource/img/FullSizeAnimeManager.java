@@ -1,10 +1,10 @@
 package resource.img;
 
-import java.io.File;
 import java.net.URL;
 import dto.chara.enums.GENDER;
 import dto.chara.enums.JOBManage;
 import dto.chara.enums.JOBManage.JOB;
+import javafx.scene.image.Image;
 import javafx.util.Duration;
 import lombok.Data;
 import lombok.Getter;
@@ -66,12 +66,14 @@ public class FullSizeAnimeManager {
             return 0;
         }
 
-        File file = new File(uri.getFile());
-        ImageAnimationView img = new ImageAnimationView(Duration.millis(800), file, 240, 240);
-        PlayUtil.playInfinityLoop(img);
+        Image img = new Image(getClass().getResourceAsStream("/" + job.getFullSizePath()));
+
+        ImageAnimationView imgAnmVw = new ImageAnimationView(Duration.millis(800), img, 240, 240);
+
+        PlayUtil.playInfinityLoop(imgAnmVw);
 
         CharaCreationInfo info = new CharaCreationInfo();
-        info.setImg(img);
+        info.setImg(imgAnmVw);
         info.setJob(job);
         _FullSize[cnt] = info;
         return 1;
