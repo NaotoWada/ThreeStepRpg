@@ -3,6 +3,7 @@ package application.ctrl;
 import java.net.URL;
 import java.util.ResourceBundle;
 import application.model.exp.ExperienceManager;
+import application.model.money.MoneyManager;
 import application.model.node.scene.SceneManager;
 import application.model.node.stage.StageManager;
 import dto.chara.manage.PartyManager;
@@ -91,8 +92,19 @@ public class TopMenuController implements Initializable {
     @FXML
     @Deprecated
     public void onDebugClicked() {
-        long get_Experience = ExperienceManager.get_Experience();
-        System.out.println(get_Experience);
+        long exp = ExperienceManager.get_Experience();
+        long mny = MoneyManager.get_Money();
+        textLabel.textProperty().set(debug(exp, mny));
+    }
+
+    private String debug(long exp, long mny) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("経験値[");
+        sb.append(exp);
+        sb.append("] お金[");
+        sb.append(mny);
+        sb.append("]");
+        return sb.toString();
     }
 
     /**

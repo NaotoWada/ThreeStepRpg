@@ -29,6 +29,8 @@ public class MoneyManager {
 
         StringProperty prop = BattleService.getInstance().textAreaProperty();
         Platform.runLater(() -> prop.set(textResult(eName, earn, prop)));
+
+        _Money += earn;
     }
 
     private static String textResult(String eName, long earn, StringProperty prop) {
