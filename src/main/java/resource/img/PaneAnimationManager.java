@@ -1,15 +1,15 @@
 package resource.img;
 
-import java.io.File;
-import java.net.URL;
 import application.model.node.pane.PaneUtils;
 import consts.PartyConsts;
 import dto.chara.enums.JOBManage.GRAVE;
 import dto.chara.enums.JOBManage.JOB;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import resource.img.FullSizeAnimeManager.CharaCreationInfo;
 import resource.img.enums.EVENT_TYPE;
+import resource.img.utils.ImgFactory;
 import resource.img.utils.PlayUtil;
 import resource.img.utils.ScaleUtil;
 
@@ -109,22 +109,18 @@ public class PaneAnimationManager {
     }
 
     private ImageAnimationView makeImageBy(JOB job) {
-        URL uri = ClassLoader.getSystemResource(job.getMiniSizePath());
-        File file = new File(uri.getFile());
+        Image img = ImgFactory.getInstance().create(job.getMiniSizePath());
+        ImageAnimationView imgAnm = new ImageAnimationView(Duration.millis(800), img, 120, 120);
+        PlayUtil.playInfinityLoop(imgAnm);
 
-        ImageAnimationView img = new ImageAnimationView(Duration.millis(800), file, 120, 120);
-        PlayUtil.playInfinityLoop(img);
-
-        return img;
+        return imgAnm;
     }
 
     private ImageAnimationView makeSetGrave() {
-        URL uri = ClassLoader.getSystemResource(GRAVE.GRAVE_IMG.getMiniSizePath());
-        File file = new File(uri.getFile());
+        Image img = ImgFactory.getInstance().create(GRAVE.GRAVE_IMG.getMiniSizePath());
+        ImageAnimationView imgAnm = new ImageAnimationView(Duration.millis(800), img, 120, 120);
+        PlayUtil.playInfinityLoop(imgAnm);
 
-        ImageAnimationView img = new ImageAnimationView(Duration.millis(800), file, 120, 120);
-        PlayUtil.playInfinityLoop(img);
-
-        return img;
+        return imgAnm;
     }
 }

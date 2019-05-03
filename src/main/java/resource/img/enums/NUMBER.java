@@ -1,13 +1,12 @@
 package resource.img.enums;
 
-import java.io.File;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.EnumMap;
 import java.util.Map;
+import javafx.scene.image.Image;
 import javafx.util.Duration;
 import lombok.Getter;
 import resource.img.ImageAnimationView;
+import resource.img.utils.ImgFactory;
 
 public enum NUMBER {
 
@@ -48,14 +47,8 @@ public enum NUMBER {
         Map<NUMBER, ImageAnimationView> digMap = imgMap.get(digType);
         ImageAnimationView imgVal = digMap.get(numType);
         if (imgVal == null) {
-            URI externalForm = null;
-            try {
-                externalForm = ClassLoader.getSystemResource(numType.getPath()).toURI();
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
-            File file = new File(externalForm);
-            imgVal = new ImageAnimationView(Duration.millis(600), file, 14, 40);
+            Image img = ImgFactory.getInstance().create(numType.getPath());
+            imgVal = new ImageAnimationView(Duration.millis(600), img, 14, 40);
 
             // 桁MAPに格納後、元MAPに明示的に詰める。
             digMap.put(numType, imgVal);

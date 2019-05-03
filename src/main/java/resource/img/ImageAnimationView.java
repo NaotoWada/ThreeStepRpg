@@ -1,6 +1,5 @@
 package resource.img;
 
-import java.io.File;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -21,7 +20,7 @@ public class ImageAnimationView extends ImageView {
     private Index index = new Index();
     private Timeline timeline;
     private Duration dur;
-    private File file;
+    private Image img;
     private int width;
     private int height;
 
@@ -34,6 +33,12 @@ public class ImageAnimationView extends ImageView {
      * @param height
      */
     public ImageAnimationView(Duration dur, Image img, int width, int height) {
+
+        // ディープコピー用に複写しておく
+        this.dur = dur;
+        this.img = img;
+        this.width = width;
+        this.height = height;
 
         // 画像が横に何枚あるか、縦に何枚あるかを算出します。
         int x = (int) img.getWidth() / width;
@@ -51,21 +56,6 @@ public class ImageAnimationView extends ImageView {
         setViewport(viewports[0]);
         setImage(img);
         timeline = new Timeline();
-    }
-
-    /**
-     * 指定したファイルが表す画像を横幅、縦幅で分割し、指定期間で1アニメーションを実行するImageAnimationViewオブジェクトを構築します。
-     *
-     * @param dur
-     * @param img
-     * @param width
-     * @param height
-     */
-    public ImageAnimationView(Duration dur, File file, int width, int height) {
-        this(dur, new Image(file.toURI().toString()), width, height);
-        this.file = file;
-        this.width = width;
-        this.height = height;
     }
 
     /**
@@ -136,6 +126,6 @@ public class ImageAnimationView extends ImageView {
     }
 
     public ImageAnimationView deepCopy() {
-        return new ImageAnimationView(dur, file, width, height);
+        return new ImageAnimationView(dur, img, width, height);
     }
 }

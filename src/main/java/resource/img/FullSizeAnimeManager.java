@@ -68,9 +68,7 @@ public class FullSizeAnimeManager {
         }
 
         Image img = ImgFactory.getInstance().create(job.getFullSizePath());
-
         ImageAnimationView imgAnmVw = new ImageAnimationView(Duration.millis(800), img, 240, 240);
-
         PlayUtil.playInfinityLoop(imgAnmVw);
 
         CharaCreationInfo info = new CharaCreationInfo();
