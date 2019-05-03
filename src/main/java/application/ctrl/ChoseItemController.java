@@ -43,8 +43,10 @@ public class ChoseItemController implements Initializable {
     @FXML
     public void onDecideClicked() {
         SE.ITEM_SET.play();
+        _ItemViewManager.payDefinitiveMoney();
         _ItemViewManager.setText();
         BattleItems.clearThenSetItems(_CheckList);
+        TopMenuController.getInstance().changeThenShow();
     }
 
     @FXML

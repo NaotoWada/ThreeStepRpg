@@ -44,4 +44,18 @@ public class MoneyManager {
         return sb.toString();
     }
 
+    /**
+     * 入力金額を所持金から減産します.
+     * <p>
+     * 入力額が所持金を超えた場合、{@code IllegalArgumentException}を送出します.<br>
+     *
+     * @param itm
+     */
+    public static void payMoneyDirect(long itm) {
+        if (_Money < itm) {
+            throw new IllegalArgumentException("入力金額が想定額より大きい");
+        }
+        _Money -= itm;
+    }
+
 }

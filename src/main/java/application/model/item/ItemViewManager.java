@@ -164,8 +164,9 @@ public class ItemViewManager {
 
     public void check(int i) {
 
-        if (!hasEnoughMoney(i)) {
+        if (!canCheck(i)) {
             ChoseItemController.get_CheckList().get(i).selectedProperty().set(false);
+            SE.CURSOR.play();
             return;
         }
 
@@ -174,6 +175,13 @@ public class ItemViewManager {
     }
 
     public void checkIfExistJob(JOB job, int i) {
+
+        if (!canCheck(i)) {
+            ChoseItemController.get_CheckList().get(i).selectedProperty().set(false);
+            SE.CURSOR.play();
+            return;
+        }
+
         switch (job) {
             case ARCHER_F:
                 break;
@@ -223,15 +231,58 @@ public class ItemViewManager {
         }
     }
 
-    public boolean hasEnoughMoney(int i) {
-        long itm = ITEM.getEnum(i).getMoney();
-        long own = MoneyManager.get_Money();
-        if (itm < own) {
-            return true;
-        } else {
-            textProperty.set("所持金が足りません 所持金[" + own + "] アイテム費用[" + itm + "]");
+    /**
+     * チェックボックスが非チェックかつ、所持金がアイテム金額を超えているか判定する.
+     * <p>
+     *
+     * @param i 入力ID
+     * @return 条件に全て一致しない(true)/それ以外(false)
+     */
+    private boolean canCheck(int i) {
+
+        if (!ChoseItemController.get_CheckList().get(i).isSelected()) {
+            // 既に選択済みの場合は無条件で終了してお金の計算をさせない
             return false;
         }
+
+        if (!hasEnoughMoney(i)) {
+            // 所持金を超えた場合はチェックボックスを非活性のままにする
+            ChoseItemController.get_CheckList().get(i).selectedProperty().set(false);
+            return false;
+        }
+
+        return true;
+    }
+
+    private boolean hasEnoughMoney(int i) {
+        long amount = getSelectedAmount();
+        long own = MoneyManager.get_Money();
+        if (amount <= own) {
+            return true;
+        } else {
+            textProperty.set("所持金があと" + (amount - own) + "足りません。\n所持金[" + own + "]");
+            return false;
+        }
+    }
+
+    /**
+     * 確定金を支払う
+     */
+    public void payDefinitiveMoney() {
+        MoneyManager.payMoneyDirect(getSelectedAmount());
+    }
+
+    /**
+     * 選択アイテムの合計金額を計算し返却する.
+     * <p>
+     * 選択が無い場合は0を返却する.
+     *
+     * @return 選択合計金額
+     */
+    private long getSelectedAmount() {
+        return ChoseItemController.get_CheckList().stream().filter(s -> s.isSelected())
+                .map(s -> ITEM.getEnum(PaneUtils.getId(s)).getMoney()).reduce((s1, s2) -> s1 + s2)
+                .orElse(0L);
     }
 
 }
