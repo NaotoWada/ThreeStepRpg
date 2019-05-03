@@ -1,7 +1,5 @@
 package dto.chara.player;
 
-import java.util.Arrays;
-import java.util.Optional;
 import application.model.battle.damage.IDamage;
 import dto.chara.abs.Characters;
 import dto.chara.effect.ActionEffect;
@@ -46,44 +44,6 @@ public class Priest extends Characters {
         effect.setEffect(EFFECT.WAND);
 
         return effect;
-    }
-
-    private ActionEffect lightBolt(Characters enemy) {
-        int damage = (int) (_Intelligence * 2.5 - enemy.get_Vitality());
-        enemy.set_Hp(enemy.get_Hp() - damage);
-        System.out.println("[" + _Name + "]が[" + enemy.get_Name() + "]を聖なる光で攻撃した。 ダメージ[" + damage
-                + "] 攻撃後[" + enemy.get_Hp() + "]");
-        this.set_Mp(this.get_Mp() - 20);
-
-        return new ActionEffect(enemy.get_Id(), damage, false, EFFECT.WAND);
-    }
-
-    private ActionEffect heal(Characters[] plys) {
-        Optional<Characters> injured = detectInjurePlayer(plys);
-        if (!injured.isPresent()) {
-            return newNothingAction();
-        }
-        Characters ply = injured.get();
-        ply.set_Hp(calcHeal(ply));
-        System.out.println("[" + _Name + "]が[" + ply.get_Name() + "]を回復した。 回復量[" + calcHeal(ply)
-                + "] 回復後[" + ply.get_Hp() + "]");
-        this.set_Mp((_Mp - 500));
-
-        return new ActionEffect(ply.get_Id(), calcHeal(ply), false, EFFECT.HEAL);
-    }
-
-    private int calcHeal(Characters ply) {
-        int healPoint = (int) (_Intelligence * 1.5);
-        if (healPoint + ply.get_Hp() > ply.get_MHp()) {
-            return ply.get_MHp(); // 回復後の値がMHPを超えるので全回復
-        } else {
-            return healPoint + ply.get_Hp(); // MHP未満なので規定ポイントだけ追加した値返却
-        }
-    }
-
-    private Optional<Characters> detectInjurePlayer(Characters[] plys) {
-        return Arrays.stream(plys).filter(s -> s.get_Hp() != s.get_MHp())
-                .max((p1, p2) -> (p1.get_MHp() - p1.get_Hp()) - (p2.get_MHp() - p2.get_Hp()));
     }
 
     public enum SKILL {
