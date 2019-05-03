@@ -17,6 +17,7 @@ public abstract class Characters implements IAction, IPlayerCopy {
     protected String _Name;
     protected JOB _Job;
     protected RANK _Rank;
+    protected int _Level;
     protected int _Id;
     protected int _Hp;
     protected int _MHp;

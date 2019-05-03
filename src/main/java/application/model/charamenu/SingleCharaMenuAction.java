@@ -134,7 +134,7 @@ public class SingleCharaMenuAction {
     private Characters createPlayer(int playerNum) {
         JOB job = FullSizeAnimeManager.getCreationInfo().getJob();
         JOB_PARAM_CORRECTION info = job.getParam();
-        charaBuilder.name(job.name()).job(job).type(EP_TYPE.PLAYER).id(playerNum)
+        charaBuilder.name(job.name()).job(job).type(EP_TYPE.PLAYER).level(1).id(playerNum)
                 .hp(correctSts(info.getHp(), _Hp)).mhp(correctSts(info.getHp(), _Hp))
                 .mp(correctSts(info.getMp(), _Mp)).mmp(correctSts(info.getMp(), _Mp))
                 .strn(correctSts(info.getStrn(), _Strength))

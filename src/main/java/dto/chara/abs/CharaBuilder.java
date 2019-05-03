@@ -18,6 +18,7 @@ public class CharaBuilder {
     protected String _Name;
     protected EP_TYPE _Type;
     protected JOB _Job;
+    protected int _Level;
     protected int _Id;
     protected int _Hp;
     protected int _MHp;
@@ -44,6 +45,11 @@ public class CharaBuilder {
 
     public CharaBuilder job(JOB job) {
         this._Job = job;
+        return this;
+    }
+
+    public CharaBuilder level(int level) {
+        this._Level = level;
         return this;
     }
 
@@ -103,28 +109,28 @@ public class CharaBuilder {
     }
 
     public Warrior buildWarrior() {
-        return new Warrior(_Name, _Type, _Job, _Id, _Hp, _MHp, _Mp, _MMp, _Strength, _Intelligence,
-                _Vitality, _Speed, _Accuracy, _Luck, new PhysicalDamage());
+        return new Warrior(_Name, _Type, _Job, _Level, _Id, _Hp, _MHp, _Mp, _MMp, _Strength,
+                _Intelligence, _Vitality, _Speed, _Accuracy, _Luck, new PhysicalDamage());
     }
 
     public Priest buildPriest() {
-        return new Priest(_Name, _Type, _Job, _Id, _Hp, _MHp, _Mp, _MMp, _Strength, _Intelligence,
-                _Vitality, _Speed, _Accuracy, _Luck, new MindDamage());
+        return new Priest(_Name, _Type, _Job, _Level, _Id, _Hp, _MHp, _Mp, _MMp, _Strength,
+                _Intelligence, _Vitality, _Speed, _Accuracy, _Luck, new MindDamage());
     }
 
     public Archer buildArcher() {
-        return new Archer(_Name, _Type, _Job, _Id, _Hp, _MHp, _Mp, _MMp, _Strength, _Intelligence,
-                _Vitality, _Speed, _Accuracy, _Luck, new AccuracyDamage());
+        return new Archer(_Name, _Type, _Job, _Level, _Id, _Hp, _MHp, _Mp, _MMp, _Strength,
+                _Intelligence, _Vitality, _Speed, _Accuracy, _Luck, new AccuracyDamage());
     }
 
     public Witch buildWitch() {
-        return new Witch(_Name, _Type, _Job, _Id, _Hp, _MHp, _Mp, _MMp, _Strength, _Intelligence,
-                _Vitality, _Speed, _Accuracy, _Luck, new MindDamage());
+        return new Witch(_Name, _Type, _Job, _Level, _Id, _Hp, _MHp, _Mp, _MMp, _Strength,
+                _Intelligence, _Vitality, _Speed, _Accuracy, _Luck, new MindDamage());
     }
 
     public Chief buildChief() {
-        return new Chief(_Name, _Type, _Job, _Id, _Hp, _MHp, _Mp, _MMp, _Strength, _Intelligence,
-                _Vitality, _Speed, _Accuracy, _Luck, new PhysicalDamage());
+        return new Chief(_Name, _Type, _Job, _Level, _Id, _Hp, _MHp, _Mp, _MMp, _Strength,
+                _Intelligence, _Vitality, _Speed, _Accuracy, _Luck, new PhysicalDamage());
     }
 
 }
