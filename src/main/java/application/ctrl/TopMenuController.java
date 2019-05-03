@@ -1,11 +1,13 @@
 package application.ctrl;
 
 import java.net.URL;
+import java.util.Map;
 import java.util.ResourceBundle;
 import application.model.exp.ExperienceManager;
 import application.model.money.MoneyManager;
 import application.model.node.scene.SceneManager;
 import application.model.node.stage.StageManager;
+import dto.chara.abs.Characters;
 import dto.chara.manage.PartyManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -92,18 +94,26 @@ public class TopMenuController implements Initializable {
     @FXML
     @Deprecated
     public void onDebugClicked() {
-        long exp = ExperienceManager.get_Experience();
+        Map<Integer, Long> exp = ExperienceManager.getExpMap();
         long mny = MoneyManager.get_Money();
-        textLabel.textProperty().set(debug(exp, mny));
+        Characters[] p = PartyManager.get_Parties();
+        textLabel.textProperty().set(debug(exp, mny, p));
     }
 
-    private String debug(long exp, long mny) {
+    private String debug(Map<Integer, Long> exp, long mny, Characters[] p) {
         StringBuilder sb = new StringBuilder();
         sb.append("経験値[");
         sb.append(exp);
         sb.append("] お金[");
         sb.append(mny);
+        sb.append("]\n キャラ1[");
+        sb.append(p[0]);
+        sb.append("]\n キャラ2[");
+        sb.append(p[1]);
+        sb.append("]\n キャラ3[");
+        sb.append(p[2]);
         sb.append("]");
+        System.out.println(sb.toString());
         return sb.toString();
     }
 

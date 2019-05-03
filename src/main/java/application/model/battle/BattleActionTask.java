@@ -7,6 +7,7 @@ import application.model.battle.sub.MergeParty;
 import application.model.battle.sub.TransPict;
 import application.model.battle.wave.WaveHelper;
 import application.model.exp.ExperienceManager;
+import application.model.exp.LevelManager;
 import application.model.item.BattleItems;
 import application.model.money.MoneyManager;
 import application.thread.ThreadUtil;
@@ -62,6 +63,7 @@ public class BattleActionTask extends Task<Void> {
             if (BattleContinueJudge.canNextWave(charas)) {
                 // 倒した相手のEXPを加算する
                 ExperienceManager.addExp(charas);
+                LevelManager.levelUp(charas);
                 MoneyManager.addMoney(charas);
 
                 // 次WAVEに遷移

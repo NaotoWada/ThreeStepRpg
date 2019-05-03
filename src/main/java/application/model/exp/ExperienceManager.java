@@ -1,5 +1,7 @@
 package application.model.exp;
 
+import java.util.HashMap;
+import java.util.Map;
 import application.model.battle.BattleService;
 import application.model.battle.mediator.BattleHelper;
 import dto.chara.abs.Characters;
@@ -21,7 +23,7 @@ public class ExperienceManager {
     @Getter
     private static final ExperienceManager instance = new ExperienceManager();
     @Getter
-    private static long _Experience = 0L;
+    private static Map<Integer, Long> expMap = new HashMap<>();
 
     /**
      * 経験値を追加し、表示を変更する.
@@ -36,7 +38,20 @@ public class ExperienceManager {
         StringProperty prop = BattleService.getInstance().textAreaProperty();
         Platform.runLater(() -> prop.set(textResult(eName, exp, prop)));
 
-        _Experience += exp;
+        // 生存している全てのキャラクターに経験値を加算する
+        Characters[] alivePlayer = BattleHelper.detectPlayer(charas);
+        for (Characters ply : alivePlayer) {
+            int id = ply.get_Id();
+            expMap.put(id, exp);
+        }
+    }
+
+    public static void clearExpAt(int id) {
+        expMap.put(id, 0L);
+    }
+
+    public static long getExp(int id) {
+        return expMap.get(id);
     }
 
     private static String textResult(String eName, long exp, StringProperty prop) {
@@ -50,6 +65,11 @@ public class ExperienceManager {
         sb.append("]の経験値を獲得した。");
         sb.append("\r\n");
         return sb.toString();
+    }
+
+    public static void useExp(int id, int used) {
+        Long nowExp = expMap.get(id);
+        expMap.put(id, nowExp - used);
     }
 
 }
