@@ -91,6 +91,10 @@ public class BattleMediator implements IBattleMediator {
                 return factory.newNothingAction();
             case SKILL_HEAL:
                 return factory.newNothingAction();
+            case RETRY:
+                return factory.newNothingAction();
+            default:
+                break;
         }
         throw new IllegalArgumentException("BattleMediator.calc");
     }
