@@ -23,8 +23,6 @@ public class BattleActionTask extends Task<Void> {
     @Override
     protected Void call() throws Exception {
 
-        AchieveManager.achieveAllDebug();
-
         // WAVEのリセット
         WaveHelper.reset();
 

@@ -10,7 +10,6 @@ import application.model.item.ItemToolTipManager;
 import application.model.item.ItemViewManager;
 import application.model.node.scene.SceneManager;
 import application.model.node.stage.StageManager;
-import dto.achieve.AchieveManager;
 import dto.chara.enums.JOBManage.JOB;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -63,7 +62,6 @@ public class ChoseItemController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        AchieveManager.achieveAllDebug();
         PaneAnimationManager.playAllAnimationChara(EVENT_TYPE.ANYTIME, paneChara1, paneChara2,
                 paneChara3);
         itemSelectViewLabel.toBack();
