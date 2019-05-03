@@ -6,7 +6,7 @@ import dto.chara.abs.IAction.EFFECT;
 import javafx.application.Platform;
 import javafx.scene.layout.Pane;
 import resource.img.ImageAnimationView;
-import resource.img.PaneAnimationManager;
+import resource.img.enums.NUMBER;
 
 public class EffectHelper {
 
@@ -49,7 +49,7 @@ public class EffectHelper {
             }
 
             int value = DamageValueCalclator.getDigit(dmg, digit);
-            ImageAnimationView loadNumber = PaneAnimationManager.loadNumber(digit, value);
+            ImageAnimationView loadNumber = NUMBER.getImg(digit, value);
             pane.getChildren().add(loadNumber);
             loadNumber.play();
 
