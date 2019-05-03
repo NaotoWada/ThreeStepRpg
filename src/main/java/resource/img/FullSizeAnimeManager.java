@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import resource.img.enums.NAVI;
+import resource.img.utils.ImgFactory;
 import resource.img.utils.PlayUtil;
 
 public class FullSizeAnimeManager {
@@ -66,7 +67,7 @@ public class FullSizeAnimeManager {
             return 0;
         }
 
-        Image img = new Image(getClass().getResourceAsStream("/" + job.getFullSizePath()));
+        Image img = ImgFactory.getInstance().create(job.getFullSizePath());
 
         ImageAnimationView imgAnmVw = new ImageAnimationView(Duration.millis(800), img, 240, 240);
 
