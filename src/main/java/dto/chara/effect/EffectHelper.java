@@ -49,7 +49,7 @@ public class EffectHelper {
             }
 
             int value = DamageValueCalclator.getDigit(dmg, digit);
-            ImageAnimationView loadNumber = PaneAnimationManager.loadNumber(value);
+            ImageAnimationView loadNumber = PaneAnimationManager.loadNumber(digit, value);
             pane.getChildren().add(loadNumber);
             loadNumber.play();
 

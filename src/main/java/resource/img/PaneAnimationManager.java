@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import resource.img.FullSizeAnimeManager.CharaCreationInfo;
 import resource.img.enums.EVENT_TYPE;
+import resource.img.enums.NUMBER;
 import resource.img.utils.PlayUtil;
 import resource.img.utils.ScaleUtil;
 
@@ -130,7 +131,7 @@ public class PaneAnimationManager {
         return img;
     }
 
-    public static ImageAnimationView loadNumber(int num) {
+    public static ImageAnimationView loadNumber(int digit, int num) {
 
         String png = num + ".png";
 
@@ -145,7 +146,7 @@ public class PaneAnimationManager {
         ImageAnimationView img = new ImageAnimationView(Duration.millis(600), file, 14, 40);
         img.setAnimationRange(1, img.getMaxIndex());
 
-        return img;
+        return NUMBER.getImg(digit, num);
         // return NUMBER.getImg(num);
     }
 }
