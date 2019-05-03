@@ -8,6 +8,7 @@ import application.model.battle.sub.TransPict;
 import application.model.battle.wave.WaveHelper;
 import application.model.exp.ExperienceManager;
 import application.model.item.BattleItems;
+import application.model.money.MoneyManager;
 import application.thread.ThreadUtil;
 import dto.achieve.AchieveManager;
 import dto.achieve.enums.EVENT;
@@ -61,6 +62,7 @@ public class BattleActionTask extends Task<Void> {
             if (BattleContinueJudge.canNextWave(charas)) {
                 // 倒した相手のEXPを加算する
                 ExperienceManager.addExp(charas);
+                MoneyManager.addMoney(charas);
 
                 // 次WAVEに遷移
                 WaveHelper.inclement();

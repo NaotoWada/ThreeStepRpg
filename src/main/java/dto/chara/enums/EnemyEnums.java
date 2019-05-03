@@ -47,6 +47,27 @@ public class EnemyEnums {
             }
             return 0;
         }
+
+        /**
+         * モンスター名からお金を取得する.
+         * <p>
+         * nullや空行を入力した場合は{@code 0}を返却する.<br>
+         * 該当がない場合も同様に{@code 0}を返却する.<br>
+         *
+         * @param name モンスター名
+         * @return お金
+         */
+        public static long getMoney(String name) {
+            if (name == null || name.equals("")) {
+                return 0;
+            }
+            for (ENEMY enemy : ENEMY.values()) {
+                if (enemy.getName().equals(name)) {
+                    return enemy.getParam().getMoney();
+                }
+            }
+            return 0;
+        }
     }
 
     /**
