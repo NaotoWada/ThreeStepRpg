@@ -6,13 +6,23 @@ public class EnemyEnums {
 
     @Getter
     public enum ENEMY {
+
         SLIME("スライム", "pict/enemy/slime.png", ENEMY_PARAM.SLIME, RANK.LOW), //
-        BAT("バット", "pict/enemy/bat.png", ENEMY_PARAM.BAT, RANK.LOW), //
-        MOUSE("マウス", "pict/enemy/mouse.png", ENEMY_PARAM.MOUSE, RANK.LOW), //
+        BAT("コウモリ", "pict/enemy/bat.png", ENEMY_PARAM.BAT, RANK.LOW), //
+        MOUSE("ネズミ", "pict/enemy/mouse.png", ENEMY_PARAM.MOUSE, RANK.LOW), //
         EGG("ミスティックエッグ", "pict/enemy/egg.png", ENEMY_PARAM.EGG, RANK.LOW), //
         GOBLIN("ゴブリン", "pict/enemy/goblin.png", ENEMY_PARAM.GOBLIN, RANK.MID), //
         GOBLIN_MASTER("ゴブリンマスター", "pict/enemy/goblinMaster.png", ENEMY_PARAM.GOBLIN_MASTER,
-                RANK.MID), //
+                RANK.HIGH), //
+        SCRATCHER("スクラッチャー", "pict/enemy/scratcher.png", ENEMY_PARAM.SCRATCHER, RANK.LOW), //
+        LIZARD("リザード", "pict/enemy/lizard.png", ENEMY_PARAM.LIZARD, RANK.LOW), //
+        LION("ライオン", "pict/enemy/lion.png", ENEMY_PARAM.LION, RANK.LOW), //
+        GRIZZLY("グリズリー", "pict/enemy/grizzly.png", ENEMY_PARAM.GRIZZLY, RANK.LOW), //
+        ELEHORN("エレホーン", "pict/enemy/elehorn.png", ENEMY_PARAM.ELEHORN, RANK.LOW), //
+        BEOWULF("ベオウルフ", "pict/enemy/beowulf.png", ENEMY_PARAM.BEOWULF, RANK.LOW), //
+        RINO("ライノ", "pict/enemy/rino.png", ENEMY_PARAM.RINO, RANK.MID), //
+        BELG("ベルグ", "pict/enemy/belg.png", ENEMY_PARAM.BELG, RANK.HIGH), //
+
         TIRANT("ドラゴン", "pict/enemy/dragon.png", ENEMY_PARAM.TYRANT, RANK.BOSS); //
 
         private final String name;
@@ -82,12 +92,20 @@ public class EnemyEnums {
     public enum ENEMY_PARAM {
 
         // HP, MP, STR, INT, VIT, SPD, ACC, LUK MONEY EXP の順番で定義する
-        SLIME(230, 100, 100, 30, 45, 10, 20, 5, 5, 1), //
-        BAT(200, 100, 140, 5, 30, 70, 20, 5, 7, 2), //
-        MOUSE(220, 100, 120, 50, 50, 60, 20, 5, 4, 2), //
-        EGG(350, 100, 10, 75, 70, 5, 100, 5, 0, 15), //
-        GOBLIN(550, 200, 250, 90, 100, 90, 50, 10, 50, 25), //
-        GOBLIN_MASTER(1200, 100, 420, 135, 170, 88, 70, 15, 500, 200), //
+        SLIME(230, 10, 100, 30, 45, 10, 20, 5, 5, 1), //
+        BAT(200, 10, 140, 5, 30, 70, 20, 5, 7, 2), //
+        MOUSE(220, 10, 120, 50, 50, 60, 20, 5, 4, 2), //
+        EGG(350, 10, 10, 75, 70, 5, 100, 5, 0, 15), //
+        GOBLIN(550, 10, 170, 65, 65, 70, 100, 10, 50, 25), //
+        GOBLIN_MASTER(1200, 100, 250, 100, 120, 90, 100, 15, 500, 200), //
+        SCRATCHER(400, 50, 170, 80, 20, 120, 120, 15, 25, 25), //
+        LIZARD(700, 30, 200, 30, 80, 90, 50, 5, 35, 20), //
+        LION(1200, 150, 200, 200, 120, 80, 100, 10, 25, 55), //
+        GRIZZLY(800, 120, 400, 10, 10, 10, 5, 5, 10, 60), //
+        ELEHORN(1500, 90, 220, 200, 400, 80, 250, 5, 150, 50), //
+        BEOWULF(600, 100, 190, 90, 100, 180, 100, 5, 100, 70), //
+        RINO(1800, 100, 120, 200, 600, 100, 200, 10, 700, 520), //
+        BELG(3000, 100, 500, 400, 400, 150, 100, 25, 2000, 1655), //
         TYRANT(1250, 500, 200, 100, 10, 60, 010, 010, 25000000, 100); //
 
         private final int hp;
