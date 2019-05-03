@@ -33,16 +33,17 @@ public class ExperienceManager {
      */
     public static synchronized void addExp(Characters[] charas) {
         String eName = BattleHelper.detectEnemyIgnoreHp(charas).get_Name();
-        long exp = ENEMY.getExp(eName);
+        long earn = ENEMY.getExp(eName);
 
         StringProperty prop = BattleService.getInstance().textAreaProperty();
-        Platform.runLater(() -> prop.set(textResult(eName, exp, prop)));
+        Platform.runLater(() -> prop.set(textResult(eName, earn, prop)));
 
         // 生存している全てのキャラクターに経験値を加算する
         Characters[] alivePlayer = BattleHelper.detectPlayer(charas);
         for (Characters ply : alivePlayer) {
             int id = ply.get_Id();
-            expMap.put(id, exp);
+            Long current = expMap.get(id);
+            expMap.put(id, current + earn);
         }
     }
 
