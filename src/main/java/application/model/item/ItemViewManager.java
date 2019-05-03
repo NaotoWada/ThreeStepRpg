@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 import application.ctrl.ChoseItemController;
 import application.model.item.validate.Validator;
+import application.model.money.MoneyManager;
 import application.model.node.pane.PaneUtils;
 import dto.chara.enums.JOBManage.JOB;
 import dto.item.ItemManager;
@@ -161,7 +162,13 @@ public class ItemViewManager {
     }
 
 
-    public void check() {
+    public void check(int i) {
+
+        if (!hasEnoughMoney(i)) {
+            ChoseItemController.get_CheckList().get(i).selectedProperty().set(false);
+            return;
+        }
+
         SE.CURSOR.play();
         textProperty.set("チェックしました");
     }
@@ -213,7 +220,18 @@ public class ItemViewManager {
                 break;
             default:
                 break;
-
         }
     }
+
+    public boolean hasEnoughMoney(int i) {
+        long itm = ITEM.getEnum(i).getMoney();
+        long own = MoneyManager.get_Money();
+        if (itm < own) {
+            return true;
+        } else {
+            textProperty.set("所持金が足りません 所持金[" + own + "] アイテム費用[" + itm + "]");
+            return false;
+        }
+    }
+
 }

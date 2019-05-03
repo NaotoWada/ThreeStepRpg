@@ -197,102 +197,122 @@ public class ChoseItemController implements Initializable {
 
     @FXML
     public void onCheckItem0Clicked() {
-        _ItemViewManager.check();
+        // 薬草
+        _ItemViewManager.check(0);
     }
 
     @FXML
     public void onCheckItem1Clicked() {
-        _ItemViewManager.check();
+        // 指輪
+        _ItemViewManager.check(1);
     }
 
     @FXML
     public void onCheckItem2Clicked() {
-        _ItemViewManager.check();
+        // 白旗
+        _ItemViewManager.check(2);
     }
 
     @FXML
     public void onCheckItem3Clicked() {
-        _ItemViewManager.check();
+        // お札
+        _ItemViewManager.check(3);
     }
 
     @FXML
     public void onCheckItem4Clicked() {
-        _ItemViewManager.check();
+        // スキルブック
+        _ItemViewManager.check(4);
     }
 
     @FXML
     public void onCheckItem5Clicked() {
-        _ItemViewManager.check();
+        // 革ブーツ
+        _ItemViewManager.check(5);
     }
 
     @FXML
     public void onCheckItem6Clicked() {
-        _ItemViewManager.check();
+        // 革シールド
+        _ItemViewManager.check(6);
     }
 
     @FXML
     public void onCheckItem7Clicked() {
+        // 銀のカギ
         _ItemViewManager.checkIfExistJob(JOB.CHIEF_M, 7);
     }
 
     @FXML
     public void onCheckItem8Clicked() {
-        _ItemViewManager.check();
+        // 狐の面
+        _ItemViewManager.check(8);
     }
 
     @FXML
     public void onCheckItem9Clicked() {
-        _ItemViewManager.check();
+        // ローブ
+        _ItemViewManager.check(9);
     }
 
     @FXML
     public void onCheckItem10Clicked() {
+        // ウィッチハット
         _ItemViewManager.checkIfExistJob(JOB.WITCH_F, 10);
     }
 
     @FXML
     public void onCheckItem11Clicked() {
-        _ItemViewManager.check();
+        // プレートアーマー
+        _ItemViewManager.check(11);
     }
 
     @FXML
     public void onCheckItem12Clicked() {
+        // 二刀
         _ItemViewManager.checkIfExistJob(JOB.CHIEF_M, 12);
     }
 
     @FXML
     public void onCheckItem13Clicked() {
+        // ヒュンケル
         _ItemViewManager.checkIfExistJob(JOB.ARCHER_F, 13);
     }
 
     @FXML
     public void onCheckItem14Clicked() {
+        // シャドウスタッフ
         _ItemViewManager.checkIfExistJob(JOB.WITCH_F, 14);
     }
 
     @FXML
     public void onCheckItem15Clicked() {
+        // ハートブレイカー
         _ItemViewManager.checkIfExistJob(JOB.WARRIOR_F, 15);
     }
 
     @FXML
     public void onCheckItem16Clicked() {
+        // エクスカリバー
         _ItemViewManager.checkIfExistJob(JOB.WARRIOR_F, 16);
     }
 
     @FXML
     public void onCheckItem17Clicked() {
-        _ItemViewManager.check();
+        // リボン
+        _ItemViewManager.check(17);
     }
 
     @FXML
     public void onCheckItem18Clicked() {
-        _ItemViewManager.check();
+        // ライフストリーム
+        _ItemViewManager.check(18);
     }
 
     @FXML
     public void onCheckItem19Clicked() {
-        _ItemViewManager.check();
+        // とき時計
+        _ItemViewManager.check(19);
     }
 
 }

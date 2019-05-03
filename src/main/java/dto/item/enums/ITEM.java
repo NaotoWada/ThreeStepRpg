@@ -6,49 +6,52 @@ import lombok.Getter;
 
 public enum ITEM {
     // 解放：初回外出時
-    MEDHICAL("EXPL_ITEM_", "薬草", "pict/item/medhical.png"), //
-    PUCHIRING("EXPL_ITEM_", "指輪", "pict/item/puchiring.png"), //
-    FLAG("EXPL_ITEM_", "退散", "pict/item/flag.png"), //
+    MEDHICAL("EXPL_ITEM_", 10, "薬草", "pict/item/medhical.png"), //
+    PUCHIRING("EXPL_ITEM_", 150, "指輪", "pict/item/puchiring.png"), //
+    FLAG("EXPL_ITEM_", 20, "退散", "pict/item/flag.png"), //
 
     // 解放：初回討伐時
-    BILL("EXPL_ITEM_", "お札", "pict/item/bill.png"), //
-    BOOK("EXPL_ITEM_", "スキルブック", "pict/item/book.png"), //
-    BOOTS("EXPL_ITEM_", "革ブーツ", "pict/item/boots.png"), //
-    SHIELD("EXPL_ITEM_", "革シールド", "pict/item/shield.png"), //
+    BILL("EXPL_ITEM_", 1000, "お札", "pict/item/bill.png"), //
+    BOOK("EXPL_ITEM_", 5000, "スキルブック", "pict/item/book.png"), //
+    BOOTS("EXPL_ITEM_", 10000, "革ブーツ", "pict/item/boots.png"), //
+    SHIELD("EXPL_ITEM_", 10000, "革シールド", "pict/item/shield.png"), //
 
     // 解放：10階層到達時
-    KEY("EXPL_ITEM_", "銀のカギ", "pict/item/key.png"), //
-    FOX("EXPL_ITEM_", "狐の面", "pict/item/fox.png"), //
+    KEY("EXPL_ITEM_", 20000, "銀のカギ", "pict/item/key.png"), //
+    FOX("EXPL_ITEM_", 30000, "狐の面", "pict/item/fox.png"), //
 
     // 解放：20階層到達時
-    CAPE("EXPL_ITEM_", "ローブ", "pict/item/cape.png"), //
-    WITCHHAT("EXPL_ITEM_", "ウィッチハット", "pict/item/witchhat.png"), //
-    ARMOR("EXPL_ITEM_", "プレートアーマー", "pict/item/armor.png"), //
+    CAPE("EXPL_ITEM_", 50000, "ローブ", "pict/item/cape.png"), //
+    WITCHHAT("EXPL_ITEM_", 85000, "ウィッチハット", "pict/item/witchhat.png"), //
+    ARMOR("EXPL_ITEM_", 150000, "プレートアーマー", "pict/item/armor.png"), //
 
     // 解放：30階層到達時
-    TWOSWORD("EXPL_ITEM_", "二刀", "pict/item/twosword.png"), //
-    HUENKEL("EXPL_ITEM_", "ヒュンケル", "pict/item/huenkel.png"), //
-    WAND("EXPL_ITEM_", "シャドウスタッフ", "pict/item/wand.png"), //
+    TWOSWORD("EXPL_ITEM_", 500000, "二刀", "pict/item/twosword.png"), //
+    HUENKEL("EXPL_ITEM_", 800000, "ヒュンケル", "pict/item/huenkel.png"), //
+    WAND("EXPL_ITEM_", 3500000, "シャドウスタッフ", "pict/item/wand.png"), //
 
     // 解放：40階層到達時
-    AXS("EXPL_ITEM_", "ハートブレイカー", "pict/item/axs.png"), //
-    EXS("EXPL_ITEM_", "エクスカリバー", "pict/item/exs.png"), //
+    AXS("EXPL_ITEM_", 4500000, "ハートブレイカー", "pict/item/axs.png"), //
+    EXS("EXPL_ITEM_", 7500000, "エクスカリバー", "pict/item/exs.png"), //
 
     // 解放：全滅時
-    RIBON("EXPL_ITEM_", "リボン", "pict/item/ribon.png"), //
-    LIFEGAIN("EXPL_ITEM_", "ライフストリーム", "pict/item/lifegain.png"), //
+    RIBON("EXPL_ITEM_", 9999999, "リボン", "pict/item/ribon.png"), //
+    LIFEGAIN("EXPL_ITEM_", 9999999, "ライフストリーム", "pict/item/lifegain.png"), //
 
     // 解放：5回外出時
-    CHRONICLES("EXPL_ITEM_", "とき時計", "pict/item/chronicles.png"),; //
+    CHRONICLES("EXPL_ITEM_", 100, "とき時計", "pict/item/chronicles.png"),; //
 
     private final String id;
+    @Getter
+    private final long money;
     @Getter
     private final String name;
     @Getter
     private final String path;
 
-    private ITEM(String id, String name, String path) {
+    private ITEM(String id, long money, String name, String path) {
         this.id = id;
+        this.money = money;
         this.name = name;
         this.path = path;
     }
